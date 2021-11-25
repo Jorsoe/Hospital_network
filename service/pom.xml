@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>com.xatu.jorsoe</groupId>
-            <artifactId>common_util</artifactId>
+            <artifactId>common_utils</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 

@@ -2,6 +2,7 @@ package com.xatu.jorsoe.hospital.controller;
 
 import com.xatu.jorsoe.hospital.model.hosp.HospitalSet;
 import com.xatu.jorsoe.hospital.service.HospitalSetService;
+import com.xatu.jorsoe.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +26,19 @@ public class HospitalSetController {
 
     @ApiOperation(value = "获取所有医院设置信息")
     @GetMapping("findAll")
-    public List<HospitalSet> getHospitalSet(){
+    public Result getHospitalSet(){
         List<HospitalSet> list = hospitalSetService.list();
-        return list;
+        return Result.ok(list);
     }
 
     @ApiOperation(value = "逻辑删除医院配置")
     @DeleteMapping("{id}")
-    public boolean removeHospital(@PathVariable Long id){
+    public Result removeHospital(@PathVariable Long id){
         boolean flag = hospitalSetService.removeById(id);
-        return flag;
+        if (flag){
+            return Result.ok();
+        } else {
+            return Result.fail();
+        }
     }
 }

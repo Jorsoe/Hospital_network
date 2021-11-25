@@ -4,8 +4,8 @@ import lombok.Getter;
 
 /**
  * @Author: Renke
- * @DateTime: 2021/11/25 16:52
- * @Description: TODO 统一返回结果状态信息类
+ * @DateTime: 2021/11/25 17:11
+ * @Description: TODO 统一返回结果信息类
  */
 
 @Getter
@@ -55,3 +55,4 @@ public enum ResultCodeEnum {
         this.message = message;
     }
 }
+
